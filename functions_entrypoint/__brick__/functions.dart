@@ -5,7 +5,7 @@ import 'package:waterbase_functions/endpoints/{{file}}.dart' as {{alias}};
 {{/functions}}
 
 
-void main(List<String> args) {
+void main(List<String> args) async {
   final address = InternetAddress.anyIPv6;
   final port = int.parse(Platform.environment['PORT'] ?? '8080');
   final pipeline = const Pipeline();
@@ -16,5 +16,7 @@ void main(List<String> args) {
   router.all({{alias}}.function.path, {{alias}}.function.onRequest);
   {{/functions}}
 
-  serve(handler, address, port);
+  final server = await serve(handler, address, port);
+  print('\x1B[92m✓\x1B[0m Running on http://${server.address.host}:${server.port}');
+  
 }
