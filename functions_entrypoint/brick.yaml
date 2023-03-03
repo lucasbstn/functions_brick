@@ -23,5 +23,5 @@ environment:
 vars:
   functions:
     type: array
-    description: An array of functions file names
+    description: An array of functions
   
