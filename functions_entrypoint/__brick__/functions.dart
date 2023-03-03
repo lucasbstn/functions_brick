@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:dart_frog/dart_frog.dart';
 {{#functions}}
-import 'package:{{projectName}}/functions/{{file}}.dart' as {{alias}};
+import 'package:waterbase_functions/endpoints/{{file}}.dart' as {{alias}};
 {{/functions}}
 
 
